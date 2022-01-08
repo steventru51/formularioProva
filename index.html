@@ -4,17 +4,20 @@
 <head>
 	<meta http-equiv="content-type"
 		content="text/html;charset=utf-8" />
+
 	<meta name="viewport" content=
 		"width=device-width, initial-scale=1.0">
 
 	<title>
-		How to add WhatsApp share
+		How to add whatsapp share
 		button on website?
 	</title>
 
 	<style type="text/css">
+
+		/* To show on small size screen only */
 		@media screen and (min-width: 500px) {
-			a {
+			.mobileShow {
 				display: none
 			}
 		}
@@ -24,12 +27,35 @@
 <body>
 	<h3>Whatsapp sharing</h3>
 
-	<a href=
-"https://wa.me/393517481222?text=La%20contatto%20per%20maggiori%20informazioni%20sull’%20appartamento`"
-		data-action="share/whatsapp/share"
-		target="_blank">
+	<input class="mobileShow"
+		type="text" name="message">
+	<button onclick="share()" class="mobileShow">
 		Share to whatsapp
-	</a>
+	</button>
+
+	<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js">
+	</script>
+	
+	<script type="text/javascript">
+		
+		// Function to share on whatsapp
+		function share() {
+
+			// Getting user input
+			var message = $("input[name=message]").val();
+
+			// Opening URL
+			window.open(
+				"wa.me/393517481222?text=" + message,
+
+				// This is what makes it
+				// open in a new window.
+				'_blank'
+			);
+		}
+	</script>
 </body>
 
 </html>
+
