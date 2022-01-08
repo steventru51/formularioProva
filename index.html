@@ -44,15 +44,22 @@
 
 			// Getting user input
 			var message = $("input[name=message]").val();
+   vm.LinkTextToShare = 'https://api.whatsapp.com/393517481222?text=' + message ;
 
+   window.open(vm.LinkTextToShare,"_blank");
 			// Opening URL
-			window.open(
-				"wa.me/393517481222?text=" + message,
+			//window.open(
+			//	"wa.me/393517481222?text=" + message,
 
 				// This is what makes it
 				// open in a new window.
-				'_blank'
-			);
+			//	'_blank'
+			//);
+			
+	vm.LinkTextToShare = 'https://web.whatsapp.com/393517481222?&text=' + message ;
+
+   window.open(vm.LinkTextToShare,"_blank");
+			
 		}
 	</script>
 </body>
