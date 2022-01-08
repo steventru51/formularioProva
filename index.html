@@ -1,127 +1,181 @@
-<html><head>
-
-    <title>WhatsApp Message Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="css/formStyle.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/appform.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
     <style>
-    body {
-        font-family: sans-serif;
-        margin: 0 auto;
-        box-sizing: border-box;
-        color: #2f2f2f;
-        background-color: #fdfdfc;
-    }
+      .register .nav-tabs .nav-link:hover {
+        border: none;
+      }
+      .text-align {
+        margin-top: -3%;
+        margin-bottom: -9%;
+
+        padding: 10%;
+        margin-left: 30%;
+      }
+      .form-new {
+        margin-right: 22%;
+        margin-left: 20%;
+      }
+      .register-heading {
+        margin-left: 21%;
+        margin-bottom: 10%;
+        color: #e9ecef;
+      }
+      .register-heading h1 {
+        margin-left: 21%;
+        margin-bottom: 10%;
+        color: #e9ecef;
+      }
+      .register {
+        background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
+        margin-top: 3%;
+        padding: 3%;
+        border-radius: 2.5rem;
+      }
+      .btnSubmit {
+        width: 50%;
+        border-radius: 1rem;
+        padding: 1.5%;
+        color: #fff;
+        background-color: #03612e;
+        border: none;
+        cursor: pointer;
+        margin-right: 6%;
+        color: rgb(246, 246, 252);
+        margin-top: 4%;
+      }
     </style>
-    
-    </head>
-    <body>
-    
-    <div align="center">
-    <h2 style="color: #25b923;font-size: 45px;margin-top: 25px;">
-        <i class="fa fa-whatsapp" style="font-size:50px;padding:5px;"></i>WhatsApp Message Form</h2>
-    </div>
-    
-    <div class="whatsappForm">
-        
-        <form id="whatsAppAnyForm" class="whatsappFormCls" action="" method="POST" data-title="WhatsApp Demo Contact Form" novalidate="">
-            <div id="whatsappFormResponse"></div>
-            <div class="whatsappFormRow">
-                <div class="label">Name <span>*</span></div>
-                <input type="text" id="name" name="name" class="whatsappForm-input" placeholder="Name" required="">
-            </div>
-            
-            <div class="whatsappFormRow">
-                <div class="label">
-                    Email <span>*</span> 
-                </div>
-                <input type="text" id="useremail" name="useremail" class="whatsappForm-input" placeholder="Your Email" required="">
-            </div>
-            
-            <div class="whatsappFormRow">
-                <div class="label">Phone</div>
-                <input type="text" id="phonenumber" name="phonenumber" class="whatsappForm-input" placeholder="Phone Number" required="">
-            </div>
-            
-            <div class="whatsappFormRow">
-                <div class="label">Choose Service <span>*</span></div>
-                <select id="service" name="service" class="whatsappForm-input" placeholder="Service" required="">
-                    <option value="Web Development">Web Development</option>
-                    <option value="Design">Design</option>
-                    <option value="Online Marketting">Online Marketting</option>
-                </select>
-            </div>
-    
-            <div class="whatsappFormRow">
-              <div class="label">Gender <span>*</span></div>
-               <div class="row-value">
-                <div class="radioselection">
-                    <span class="radio">
-                        <span class="radiolabel">Male</span>
-                        <input type="radio" id="gender" name="gender" value="Male" class="whatsappForm-select" placeholder="Gender" required="">
-                        
-                    </span>
-                    <span class="radio">
-                        <span class="radiolabel">Female</span>
-                        <input type="radio" id="gender" name="gender" value="Female" class="whatsappForm-select" placeholder="Gender" required="">
-                        
-                    </span>
-                </div>
-            </div>
-    
-            </div>
-    
-            <div class="whatsappFormRow">
-                <div class="label">How did you hear about us?</div>
-    
-                <div class="row-value">
-                    <div class="checkboxes">
-                        <span class="checkbox">
-                            <span class="checkbox-label">Social Media</span>
-                            <input type="checkbox" name="checkbox_options" id="checkbox_options" class="whatsappForm-select" value="Social Media" placeholder="How did you hear about us?">
-                            
-                        </span>
-    
-                        <span class="checkbox">
-                            <span class="checkbox-label">Others</span>
-                            <input type="checkbox" name="checkbox_options" id="checkbox_options" class="whatsappForm-select" value="Others" placeholder="How did you hear about us?">
-                            
-                        </span>
+</head>
+<body>
+    <div class="container register">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="tab-pane fade show active text-align form-new"
+              id="home"
+              role="tabpanel"
+              aria-labelledby="home-tab"
+            >
+              <h3 class="register-heading text-nowrap">HTML Form to WhatsApp</h3>
+              <div class="row register-form">
+                <div class="col-md-12">
+                  <form autocomplete="off">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="Name"
+                        id="name"
+                        class="form-control"
+                        placeholder="Your Name *"
+                        value=""
+                        required=""
+                      />
                     </div>
-                </div>		
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        name="Email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Your Email *"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        name="Phone"
+                        id="phone"
+                        class="form-control"
+                        placeholder="Your Contact Number *"
+                        value=""
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control" id="service">
+                        <option>Default select</option>
+                        <option>Website Development</option>
+                        <option>Mobile App Development</option>
+                        <option>Web and Mobile Application</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        type="submit"
+                        name="submit"
+                        onclick="gotowhatsapp()"
+                        data-action="share/whatsapp/share"
+                        class="btnSubmit btn-block"
+                        value="Submit"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+
             
-            <div class="whatsappFormRow">
-                <div class="label"> Message</div>
-                <textarea id="message" rows="3" name="message" class="whatsappForm-textarea">			</textarea>
-            </div>
+<span
     
-            <div class="whatsappFormRow" align="center">
-                    <button type="Submit" id="whatsappFormSubmit"><i class="fa fa-whatsapp" style="font-size:20px;padding:5px;"></i>Submit via WhatsApp</button>
-                    
-                    
-            </div>
+      
+      class="float"
+      onclick="gotowhatsapp()"
+      style="
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+        right: 120px;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 2px 2px 3px #999;
+      "
+      >
+      <img
+        src="https://trickuweb.com/whatsapp.png"
+        alt=""
+        height="60px"
+        width="60px"
+      />
+      </a>
+    </span>
+      <script>
+        function gotowhatsapp() {
+            
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var email = document.getElementById("email").value;
+            var service = document.getElementById("service").value;
         
-        </form>
-    </div>  
+            var url = "https://wa.me/393517481222?text=" 
+            + "Name: " + name + "%0a"
+            + "Phone: " + phone + "%0a"
+            + "Email: " + email  + "%0a"
+            + "Service: " + service; 
+        
+            window.open(url, '_blank').focus();
+        }
+        </script>
+ 
+
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    
-    <script>
-    (function($){
-            "use strict";
-                $('#whatsAppAnyForm').appPlugin( 
-                    {
-                        whatsappPhone: '+393517481222', // Your Whatsapp Number, on which you want to send message.
-                        submissionMessage: 'You have been redirected to the WhatsApp to submit the message. Thank you.' // form submission message
-                    });	
-    })(jQuery);
-    </script>
-    
-    
-    </body></html>
+</body>
+</html>
